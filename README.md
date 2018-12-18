@@ -18,12 +18,12 @@
     contentBase: __dirname + "/dist",
     compress: true,
     port: 8090,
-    proxy: {
-      "/user": {
-        target: "http://localhost:8081", //mock server address 
-        secure: false
+    proxy: [
+      {
+        context: ['/user', '/webuser'],
+        target: 'http://localhost:8081'
       }
-    }
+    ]
   },
 
 ```
