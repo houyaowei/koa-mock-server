@@ -17,8 +17,11 @@ app.use(new bodyParser());
 
 require("../router/login")(app);
 require("../router/permission")(app);
+require("../router/senceMarking")(app);
 
-const server = http.createServer(app.callback()).listen(config.server.port,function(){
-  console.log();
-  console.log("%s listening at port %d", config.app.name, config.server.port);
-});
+const server = http
+  .createServer(app.callback())
+  .listen(config.server.port, function() {
+    console.log();
+    console.log("%s listening at port %d", config.app.name, config.server.port);
+  });
